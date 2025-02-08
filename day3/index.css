@@ -1,0 +1,16 @@
+.external{
+    background-color: blueviolet;
+    height: 600px;
+    width: 400px;
+}
+#idselector{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+ol{
+    margin-top: 150px;
+    list-style-type: circle;
+}
+*{
+    background-color: cadetblue;
+}
