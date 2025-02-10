@@ -1,6 +1,19 @@
 .box{
     padding: 10px;
-    margin: 25px;
+    margin: 5px;
     background-color: cyan;
     border: solid 15px pink;
+}
+.fixed-position{
+    position: fixed;
+    background-color: darkcyan;
+    text-align: center;
+    width: 1270px;
+    margin-top: -15px;
+    margin-left: -10px;
+    margin-bottom: 200px;
+}
+.relative-pos{
+    position: relative;
+    margin: 50px;
 }
