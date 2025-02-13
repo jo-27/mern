@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>form styling</title>
-    <link rel="stylesheet" href="./task.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./task.css" />
+  </head>
+  <body>
     <table class="form-container">
-        <form>
-            <tr>
-                <td>First name:</td>
-                <td><input class="data" type="text" placeholder="Enter your First Name"></td>
-            </tr>
-            <tr>
-                <td>Last name:</td>
-                <td><input class="data" type="text" placeholder="Enter your last Name"></td>
-            </tr>
-            <tr>
-                <td>Phone number:</td>
-                <td><input class="data" type="text" placeholder="Enter your phone number"></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button class="data" type="submit">Sign Up</button>
-                </td>
-            </tr>
-        </form>
+      <form>
+        <tr>
+          <td>First name:</td>
+          <td>
+            <input
+              class="data"
+              type="text"
+              placeholder="Enter your First Name"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Last name:</td>
+          <td>
+            <input
+              class="data"
+              type="text"
+              placeholder="Enter your last Name"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Phone number:</td>
+          <td>
+            <input
+              class="data"
+              type="text"
+              placeholder="Enter your phone number"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="dob">Date of Birth:</label></td>
+          <td>
+            <input
+              class="data"
+              type="date"
+              placeholder="Enter your Date"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Phone number">Mobile number:</label></td>
+          <td>
+            <input
+              class="data"
+              type="tel"
+              placeholder="Enter your Password"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button class="data" type="submit">Sign Up</button>
+          </td>
+        </tr>
+      </form>
     </table>
-    
-</body>
+  </body>
 </html>
