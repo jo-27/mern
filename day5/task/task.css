@@ -34,7 +34,7 @@ li{
 @media  screen and (min-width:600px) {
     nav{
         display: flex;
-        padding:5px;
+        padding:10px;
         justify-content: space-around;
         margin: 0;
         background-color:burlywood;
@@ -43,14 +43,19 @@ li{
     }
     header{
         background-color:burlywood;
+        padding-bottom: -10px;
     }
     hr {
         border: none;
-        height: 1px;
+        height: 2px;
         background-color: black;
       }
     body{
         margin: 0;
+        padding-bottom: -5px;
+    }
+    li{
+        list-style-type: none;
     }
     .link{
         text-decoration:none;
