@@ -117,6 +117,7 @@
 //         depts:["CSE","ADS","IT","ECE"],
 //         training:"mern"
 //     }
+
 // for(i in obj1){
 //     console.log(i) //prints the keys
 // }
@@ -140,11 +141,11 @@
 // }
 // console.log("\n")
 // for({k,v} of Object.entries(obj1)){
-//     console.log(k,v)  //prints the keys and values resp
+//     console.log(k,v) //prints all keys and values as undefined why??(task 1)
 // }
 // console.log("\n")
 // for([k,v] of Object.entries(obj1)){
-//     console.log(k,v)  //prints all keys and values as undefined why??(task 1)
+//     console.log(k,v)  //prints the keys and values resp
 // }
 
 //for each
