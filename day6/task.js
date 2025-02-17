@@ -8,11 +8,14 @@
 // for({k,v} of Object.entries(obj1)){
 //     console.log(k,v) //prints all keys and values as undefined why?
 // }
+// for([k,v] of Object.entries(obj1)){
+//     console.log(k,v) //prints all keys and values resp
+// }
 // for(i of Object.entries(obj1)){
 // console.log(i) 
 // }
 // // each element is in the form of array
-// // To destructure an array element, you need to use square brackets
+// // To deconstruct an array element, you need to use square brackets
 
 // //task 2
 // //functions

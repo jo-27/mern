@@ -173,11 +173,13 @@
 //  3)without parameter with argument
 //  4)with parameter with argument
 
-// es6 features:
-// 1)variables-let,const
+// es6 features: (ECMA script standard 6)
+// //1)variables-let,const
 
-// 2)arrow function
+// //2)arrow function
 // var arrowfunc=()=>{
 //     console.log("this is arrow func")
 // }
 // arrowfunc()
+
+
