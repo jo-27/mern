@@ -1,0 +1,23 @@
+<!---dom(document object model) manipulating something inside the html page after it is loaded by
+ means of some action-->
+<!---<script sr=" ">(normal scripting)</script>-->
+<!---<script module=" ">(for a particulare module)</script>-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+ </head>
+ <body>
+    <h1 id="domM1">Hello,SJIT</h1> 
+    <h1 id="domM">hii</h1>
+    <script>
+        document.getElementById("domM").textContent="welcome to sjit" 
+        // why the second dom is not manipulated when given single id but works when  the first dom is commented
+        document.getElementById("domM1").innerHTML="welcome"  
+        // task1 is it possible to give two dom for one id ,if two seperate heading tags are used then the dom is manipulated
+        // change the colour without css,what are the diff 10 dom manipulations
+    </script>
+ </body>
+ </html>
