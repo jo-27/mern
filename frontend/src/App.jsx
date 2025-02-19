@@ -4,10 +4,12 @@ import viteLogo from "/vite.svg";
  import './App.css'
 import Home from "./components/FunctionalComponent/Home";
 import About from "./components/FunctionalComponent/About";
-import Form from "./components/FunctionalComponent/Form";
+import Contact from "./components/FunctionalComponent/Contact";
 import Gallery from "./components/FunctionalComponent/Gallery";
 import Skills from "./components/FunctionalComponent/Skills";
 import Navbar from "./components/FunctionalComponent/Navbar";
+import Signup from "./components/FunctionalComponent/Signup";
+import Login from "./components/FunctionalComponent/Login"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UseEffect from "./components/FunctionalComponent/Hooks/UseEffect";
 
@@ -26,8 +28,8 @@ function App() {
             element={<About/>}
           />
           <Route
-            path="/form"
-            element={<Form/>}
+            path="/contact"
+            element={<Contact/>}
           />
           <Route
             path="/gallery"
@@ -40,6 +42,14 @@ function App() {
           <Route
             path="/use-effect"
             element={<UseEffect/>}
+          />
+          <Route
+            path="/signup"
+            element={<Signup/>}
+          />
+          <Route
+            path="/Login"
+            element={<Login/>}
           />
         </Routes>
       </BrowserRouter>      
