@@ -1,0 +1,13 @@
+nav{
+    display: flex;
+    list-style-type: none;
+    background-color: rgb(2, 101, 101);
+    color: aliceblue;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+/* *{
+    margin: 0;
+    padding: 0;
+} */
