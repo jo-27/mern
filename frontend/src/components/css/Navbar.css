@@ -7,16 +7,13 @@ nav{
     padding: 20px;
     font-size: 25px;
 }
-
 .dropdown {
     position: relative;
-    cursor: pointer;
     padding: 5px;
   }
   
   .dropdown-menu {
     position: absolute;
-    top: 100%;
     left: 0;
     background: #333;
     list-style: none;
@@ -38,7 +35,7 @@ nav{
   }
   
   .dropdown-menu li a:hover {
-    background: #444;
+    background: rgb(153, 106, 45);
   }
 .link{
     text-decoration:none;
@@ -47,3 +44,6 @@ nav{
 .link:hover{
     color: white;
 }
+/* *{
+  background-color: beige;
+} */

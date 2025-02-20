@@ -12,6 +12,10 @@ import Signup from "./components/FunctionalComponent/Signup";
 import Login from "./components/FunctionalComponent/Login"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UseEffect from "./components/FunctionalComponent/Hooks/UseEffect";
+import UseState from "./components/FunctionalComponent/Hooks/UseState";
+import UseEffectAPI  from "./components/FunctionalComponent/Hooks/UseEffectAPI";
+import UseRef from "./components/FunctionalComponent/Hooks/UseRef";
+import UseMemo from "./components/FunctionalComponent/Hooks/UseMemo";
 
 function App() {
   return (
@@ -50,6 +54,22 @@ function App() {
           <Route
             path="/Login"
             element={<Login/>}
+          />
+          <Route
+            path="/UseState"
+            element={<UseState/>}
+          />
+          <Route
+            path="/UseEffectAPI"
+            element={<UseEffectAPI/>}
+          />
+          <Route
+            path="/UseRef"
+            element={<UseRef/>}
+          />
+          <Route
+            path="/UseMemo"
+            element={<UseMemo/>}
           />
         </Routes>
       </BrowserRouter>      

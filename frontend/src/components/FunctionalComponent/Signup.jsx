@@ -84,15 +84,12 @@ function Signup() {
           <tr>
             <td></td>
             <td style={{textAlign:"left"}}>
-              <button type="Submit">Sign Up</button>
+              <button type="Submit" className="sbutton">Sign Up</button>
             </td>
           </tr>
-          <tr><td></td><td style={{textAlign:"right"}}>
-      Already have an account?<Link to="/Login">Login</Link>
-      </td></tr>
         </table>
+        <p style={{textAlign:"center"}}>Already have an account?<Link to="/Login">Login</Link></p>
       </form>
-      
     </div>
   );
 }
