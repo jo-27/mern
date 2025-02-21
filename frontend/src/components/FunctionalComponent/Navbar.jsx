@@ -75,7 +75,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li >
-          <Link to="/HoC" className="link">
+          <Link to="/hoc" className="link">
             HoC
           </Link>
         </li>

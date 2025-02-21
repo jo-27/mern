@@ -18,7 +18,7 @@ import UseRef from "./components/FunctionalComponent/Hooks/UseRef";
 import UseMemo from "./components/FunctionalComponent/Hooks/UseMemo";
 import UseCallback from "./components/FunctionalComponent/Hooks/UseCallback";
 import UseMemoize from "./components/FunctionalComponent/Hooks/UseMemoize"
-import HoC from "./components/FunctionalComponent/Hoc/Hoc";
+import HoC from "./components/FunctionalComponent/Hoc/HoCfile";
 
 function App() {
   return (
@@ -83,7 +83,7 @@ function App() {
             element={<UseMemoize/>}
           />
           <Route
-            path="/HoC"
+            path="/hoc"
             element={<HoC/>}
           />
         </Routes>
