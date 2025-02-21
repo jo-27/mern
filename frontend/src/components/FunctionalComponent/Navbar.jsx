@@ -4,6 +4,7 @@ import "../css/Navbar.css";
 
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [isDropdownVisible1, setDropdownVisible1] = useState(false);
   return (
     <header>
       <nav>
@@ -79,6 +80,38 @@ const Navbar = () => {
             HoC
           </Link>
         </li>
+
+
+        <div
+          className="dropdown"
+          onMouseEnter={() => setDropdownVisible1(true)}
+          onMouseLeave={() => setDropdownVisible1(false)}
+        >
+          <span className="link" >Memoization</span>
+          {isDropdownVisible1 && (
+            <ol className="dropdown-menu">
+              <li>
+                <Link to="/Memo" className="ulink">
+                  Memo
+                </Link>
+              </li>
+              <li>
+              <Link to="/Number" className="ulink">
+                  Number
+                </Link>
+              </li>
+              <li>
+              <Link to="/Text" className="ulink">
+                  Text
+                </Link>
+                
+              </li>
+            </ol>
+          )}
+        </div>
+
+
+
         <li >
           <Link to="/skills" className="link">
             Skills

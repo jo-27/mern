@@ -19,7 +19,10 @@ import UseMemo from "./components/FunctionalComponent/Hooks/UseMemo";
 import UseCallback from "./components/FunctionalComponent/Hooks/UseCallback";
 import UseMemoize from "./components/FunctionalComponent/Hooks/UseMemoize"
 import HoC from "./components/FunctionalComponent/Hoc/HoCfile";
-
+import Memo from "./components/FunctionalComponent/memoization/memo";
+import Number from "./components/FunctionalComponent/memoization/Number";
+import Text from "./components/FunctionalComponent/memoization/Text";
+import LazyLoadingAndSuspense from "./components/FunctionalComponent/memoization/LazyLoadingAndSuspense";
 function App() {
   return (
     <main>
@@ -86,9 +89,40 @@ function App() {
             path="/hoc"
             element={<HoC/>}
           />
+          <Route
+            path="/Memo"
+            element={<Memo/>}
+          />
+          <Route
+            path="/Number"
+            element={<Number/>}
+          />
+          <Route
+            path="/Text"
+            element={<Text/>}
+          />
+          <Route
+            path="/Lazy"
+            element={<LazyLoadingAndSuspense/>}
+          />
         </Routes>
-      </BrowserRouter>      
+      </BrowserRouter>
     </main>
   );
 }
 export default App;
+
+// import { Suspense, lazy } from "react";
+// const LazyComp = lazy(() => import("./components/FunctionalComponent/Signup"));
+// function App() {
+//   return (
+//     <div>
+//       <Suspense fallback={<h1>loading...</h1>}>
+//         <h1>LazyLoadingAndSuspense</h1>
+//         <LazyComp></LazyComp>
+//       </Suspense>
+//     </div>
+//   );
+// };
+
+// export default App;
