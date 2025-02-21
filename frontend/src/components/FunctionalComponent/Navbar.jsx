@@ -31,28 +31,38 @@ const Navbar = () => {
           {isDropdownVisible && (
             <ol className="dropdown-menu">
               <li>
-                <Link to="/UseState" className="link">
+                <Link to="/UseState" className="ulink">
                   UseState
                 </Link>
               </li>
               <li>
-                <Link to="/use-effect" className="link">
+                <Link to="/use-effect" className="ulink">
                   UseEffect
                 </Link>
               </li>
               <li>
-                <Link to="/UseEffectAPI" className="link">
+                <Link to="/UseEffectAPI" className="ulink">
                   UseEffectAPI
                 </Link>
               </li>
               <li>
-                <Link to="/UseRef" className="link">
+                <Link to="/UseRef" className="ulink">
                   UseRef
                 </Link>
               </li>
               <li>
-                <Link to="/UseMemo" className="link">
+                <Link to="/UseMemo" className="ulink">
                   UseMemo
+                </Link>
+              </li>
+              <li>
+                <Link to="/UseCallback" className="ulink">
+                  UseCallback
+                </Link>
+              </li>
+              <li>
+                <Link to="/UseMemoize" className="ulink">
+                  UsememoizeCustomHook
                 </Link>
               </li>
             </ol>
@@ -62,6 +72,11 @@ const Navbar = () => {
         <li >
           <Link to="/contact" className="link">
             Contact
+          </Link>
+        </li>
+        <li >
+          <Link to="/HoC" className="link">
+            HoC
           </Link>
         </li>
         <li >

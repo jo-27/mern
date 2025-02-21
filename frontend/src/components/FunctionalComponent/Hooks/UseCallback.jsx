@@ -1,35 +1,32 @@
-import { useState, useMemo } from "react";
-function slowFunction(num){
-    for(var i=0;i<1000000;i++){}
-    return num*2
-}
-const UseMemo = () => {
+import { useState, useCallback } from "react";
+
+const UseCallback = () => {
   var [number, setNumber] = useState(0);
   var [theme, setTheme] = useState(false);
   var styling={
     backgroundColor: theme ? "black" : "pink",
     color: theme ? "pink" : "black",
   }
-  var doublingUpANumber=useMemo(()=>{
-    return slowFunction(number)
+  var numList=useCallback((mul)=>{
+    return [number+mul*2,number+mul*4,number+mul*8]
   },[number])
   return (
     <>
     <button onClick={()=>setTheme(!theme)}>toggle theme</button>
     <div style={styling}>
-      <h1>this is use memo</h1>
+      <h1>this is useCallback</h1>
       Number box:{""}
       <input
         type="number"
         value={number}
         onChange={(e) => {
-          setNumber(e.target.value);
+          setNumber(parseInt(e.target.value));
         }}
       ></input>
-      <h2>the number is:{number}</h2>
-      <h2>the number is: {doublingUpANumber}</h2>
+    <h2>the number list is </h2>
+    {numList(10).map((val,index)=>(<h2 key={index}>{val}</h2>))}
     </div>
     </>
   );
 };
-export default UseMemo;
+export default UseCallback;
