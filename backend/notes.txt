@@ -1,0 +1,117 @@
+express:backend server
+
+steps to install:
+1.npm init -y
+2.index.js
+3.npm i express
+4.gitignore-    node_modules/    , .env
+5.to start server:
+
+const express = require('express')
+
+const app=express()
+
+const PORT =3001
+
+app.listen(PORT,()=>console.log("server started successfully"))
+
+6.in package.json:
+
+ "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+7.npm start- op is printed(always only on local console if clg is used)
+
+8.in index.js:(to create server)
+const express = require('express')
+
+const app=express()
+
+app.get("/",(req,res)=>{
+    res.send("<h1>welcome<h1>")
+})
+const PORT =3001
+
+app.listen(PORT,()=>console.log("server started successfully"))
+
+9.to check the server:
+go to browser-locolhost:3001(post given during installation)
+
+10.index.js-static server agn have to give npm start to avoid step 10
+
+11.npm i nodemon--->fetch my backend,everytime need not give npm start
+ "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+12.to check in postman-copy the url paste give get -->the op will be printed 
+
+12.const express = require('express')
+
+const app=express()
+
+app.get("/",(req,res)=>{
+    res.send("<h1>welcome back<h1>")
+})
+app.get("/static",(req,res)=>{                                                                  |
+    res.sendFile("C:\\Users\\joans\\OneDrive\\Documents\\desktop\\mern\\html_css\\index.html")  |--->to fetch file
+})                                                                                              |    
+const PORT =3001
+
+app.listen(PORT,()=>console.log("server started successfully"))
+
+
+
+
+mongoDB:
+why?-document based data
+in structured data:once the table is created the data cannot be altered
+
+noSQL->non structure query language
+orm:object relational mapping
+there is no joins concept
+collections will be in the form of json object eg:
+{
+ firstname:"hello",
+ college:"sjit,
+ batch:"2022",
+}
+
+operations:CRUD(CREATE,READ,UPDATE,DELETE)
+
+
+C:
+db creation:use <databasename>;
+collection creation:db.createCollection("signup");
+inserting in collection:
+1.insertOne:
+db.signup.insertOne({"firstname":"sjit"});
+2.insertMany:
+db.signup.insertMany([{"firstname":"sjit"},{},{}....]);
+
+show databases;
+show Collections
+
+R:
+1.findOne:
+db.signup.findOne();--->1st record 
+2.find
+db.signup.find();--->all the records
+
+U:
+1.updateOne:
+db.signup.updateOne({fname:"hii"},{$set:{fname:"hello"}});---->updates only the first matching record only
+2.updateMany:
+db.signup.updateMany({fname:"hii"},{$set:{fname:"hello"}});
+                     -------------  --------------------
+                           |                |
+                        condition       updation
+
+D:
+1.deleteOne:
+db.signup.deleteOne({"firstname":"sjit"});
+2.deleteMany:
+db.signup.deleteMany({"firstname":"sjit"});
