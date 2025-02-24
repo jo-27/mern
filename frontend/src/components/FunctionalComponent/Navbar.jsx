@@ -66,6 +66,11 @@ const Navbar = () => {
                   UsememoizeCustomHook
                 </Link>
               </li>
+              <li>
+                <Link to="/CoE" className="ulink">
+                  UseContext
+                </Link>
+              </li>
             </ol>
           )}
         </div>

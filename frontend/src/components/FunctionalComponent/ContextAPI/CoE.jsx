@@ -4,8 +4,9 @@ import Faculty from './Faculty'
 const CoE = () => {
   return (
     <div>
-        <Faculty sgpa="10" cgpa="10"/>
-        <h1>Results Published</h1></div>
+        <h1>Results Published</h1>
+        <Faculty />
+    </div>
   )
 }
 

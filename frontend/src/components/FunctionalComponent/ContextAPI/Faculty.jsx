@@ -1,11 +1,11 @@
 import React from 'react'
-import Exam from './Exam'
+import Result from './Result';
 
 const Faculty = () => {
   return (
     <div>
         <h1>Faculty Correcting Papers</h1>
-        <CoE sgpa="10" cgpa="10"/>
+        <Result />
     </div> 
   )
 }

@@ -23,7 +23,9 @@ import Memo from "./components/FunctionalComponent/memoization/memo";
 import Number from "./components/FunctionalComponent/memoization/Number";
 import Text from "./components/FunctionalComponent/memoization/Text";
 import LazyLoadingAndSuspense from "./components/FunctionalComponent/memoization/LazyLoadingAndSuspense";
-import CoE from "./components/FunctionalComponent/ContextAPI/CoE"
+import CoE from "./components/FunctionalComponent/ContextAPI/CoE";
+import { UseContext } from './components/FunctionalComponent/Hooks/UseContext';
+
 
 
 function App() {
@@ -110,7 +112,11 @@ function App() {
           />
           <Route
             path="/CoE"
-            element={<CoE/>}
+            element={
+              <UseContext>
+                <CoE />
+              </UseContext>
+            }
           />
         </Routes>
       </BrowserRouter>

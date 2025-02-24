@@ -1,13 +1,13 @@
-import React from 'react'
-import Result from './Result'
+import React from 'react';
+import Faculty from './Faculty';
 
 const Exam = () => {
   return (
     <div>
-        <h1>Students are writing Exams</h1>
-        <Faculty sgpa="10" cgpa="10"/>
+      <h1>Students are writing Exams</h1>
+      <Faculty />
     </div>
-  )
-}
+  );
+};
 
-export default Exam
+export default Exam;
