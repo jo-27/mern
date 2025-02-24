@@ -80,6 +80,11 @@ const Navbar = () => {
             HoC
           </Link>
         </li>
+        <li >
+          <Link to="/CoE" className="link">
+            propsDrilling
+          </Link>
+        </li>
 
 
         <div

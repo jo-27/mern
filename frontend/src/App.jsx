@@ -23,6 +23,9 @@ import Memo from "./components/FunctionalComponent/memoization/memo";
 import Number from "./components/FunctionalComponent/memoization/Number";
 import Text from "./components/FunctionalComponent/memoization/Text";
 import LazyLoadingAndSuspense from "./components/FunctionalComponent/memoization/LazyLoadingAndSuspense";
+import CoE from "./components/FunctionalComponent/ContextAPI/CoE"
+
+
 function App() {
   return (
     <main>
@@ -104,6 +107,10 @@ function App() {
           <Route
             path="/Lazy"
             element={<LazyLoadingAndSuspense/>}
+          />
+          <Route
+            path="/CoE"
+            element={<CoE/>}
           />
         </Routes>
       </BrowserRouter>
