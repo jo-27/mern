@@ -69,6 +69,7 @@ app.listen(PORT,()=>console.log("server started successfully"))
 mongoDB:
 why?-document based data
 in structured data:once the table is created the data cannot be altered
+it is case sensitive
 
 noSQL->non structure query language
 orm:object relational mapping
@@ -110,8 +111,123 @@ db.signup.updateMany({fname:"hii"},{$set:{fname:"hello"}});
                            |                |
                         condition       updation
 
+upsert:
+if present modify it else inserts it
+inserts a new record:db.signup.updateOne({firstname:"hello"},{$set:{firstname:"merin",dept:"placement officer",college:"sjit"}},{upsert:true})
+
+no matter what the mongo shell will always show acknowleged as true 
+
 D:
 1.deleteOne:
 db.signup.deleteOne({"firstname":"sjit"});
 2.deleteMany:
 db.signup.deleteMany({"firstname":"sjit"});
+
+integration of backend and mongoDB
+1.npm i mongoose
+2.create .env
+MONGODB_URL="mongodb:\\localhost:27017\sjit"      //without spaces
+3.int index.js:
+const express = require("express");
+const mdb = require("mongoose");
+4.npm i dotenv
+5.index.js:
+const express = require("express");
+const mdb = require("mongoose");
+const dotenv=require('dotenv')
+const app = express();
+const PORT = 3001;
+dotenv.config()
+mdb
+  .connect("mongodb://localhost:27017/sjit")
+  .then(() => {
+    console.log("MBD sucess");
+  })
+  .catch((err) => {
+    console.log("cheack you string", err);
+  });
+
+app.get("/", (req, res) => {
+  res.send("<h1>welcome back<h1>");
+});
+app.get("/static", (req, res) => {
+  res.sendFile(
+    "C:\\Users\\joans\\OneDrive\\Documents\\desktop\\mern\\html_css\\index.html"
+  );
+});
+
+app.listen(PORT, () => console.log("server started successfully"));
+
+6.create signupSchemajs under models folder
+const mdb=require('mongoose')
+
+const signupSchema=mdb.SchemaType({
+    firstName:String,
+    lastName:String,
+    email:String,
+    password:String,
+    phoneNumber:Number,
+})
+
+const signup_schema=mdb.model("signup",signupSchema)
+module.exports=signup_schema
+
+7.index.js:
+const express = require("express");
+const mdb = require("mongoose");
+const dotenv=require('dotenv')
+const Signup=require('./models/signupSchema')
+const app = express();
+app.use(express.json())
+const PORT = 3001;
+dotenv.config()
+mdb
+  .connect("mongodb://localhost:27017/sjit")
+  .then(() => {
+    console.log("MBD sucess");
+  })
+  .catch((err) => {
+    console.log("cheack you string", err);
+  });
+
+app.get("/", (req, res) => {
+  res.send("<h1>welcome back<h1>");
+});
+app.get("/static", (req, res) => {
+  res.sendFile(
+    "C:\\Users\\joans\\OneDrive\\Documents\\desktop\\mern\\html_css\\index.html"
+  );
+});
+
+app.post("/signup",(req,res)=>{
+    try {
+        const {firstName,lastName,email,password,phoneNumber}=req.body
+    const newSignup=new Signup({
+        firstName:"Joan",
+        lastName:"Sharon",
+        phoneNumber:7550261995,
+        password:"sharon204",
+        email:"hello@sjit.ac.in"
+    });
+    newSignup.save()
+    console.log("signup sucess")
+    res.status(201).json({message:"Signup Successfull",isSignup:true})
+        
+    } catch (error) {
+        res.status(201).json({message:"Signup UnSuccessfull",isSignup:flase})
+    }
+
+})
+
+app.listen(PORT, () => console.log("server started successfully"));
+
+8.postman:
+got to post->change the path to signup->select body->raw->send post
+
+
+
+firstName:firstName,
+        lastName:lastName,
+        phoneNumber:phoneNumber,
+        password:password,
+        email:email
