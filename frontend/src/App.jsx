@@ -19,7 +19,7 @@ import UseMemo from "./components/FunctionalComponent/Hooks/UseMemo";
 import UseCallback from "./components/FunctionalComponent/Hooks/UseCallback";
 import UseMemoize from "./components/FunctionalComponent/Hooks/UseMemoize"
 import HoC from "./components/FunctionalComponent/Hoc/HoCfile";
-import Memo from "./components/FunctionalComponent/memoization/memo";
+import Memo from "./components/FunctionalComponent/Hooks/UseMemo";
 import Number from "./components/FunctionalComponent/memoization/Number";
 import Text from "./components/FunctionalComponent/memoization/Text";
 import LazyLoadingAndSuspense from "./components/FunctionalComponent/memoization/LazyLoadingAndSuspense";
