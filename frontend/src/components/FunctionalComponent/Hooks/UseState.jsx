@@ -15,8 +15,8 @@ function UseState(){
             <button onClick={handleDecrement}>-</button>
             <button onClick={()=>{setNum(num+1)}}>+</button>
             <button onClick={()=>{setNum(num=0)}}>reset</button><br></br>
-            <input onchange={()=>{setString(s=string)}} type="text" placeholder={s}/>
-            <h3 onchange={()=>{setString(s=string)}}>the string typed is:{string}</h3>
+            <input onChange={()=>{setString(s=string)}} type="text" placeholder={s}/>
+            <h3 onChange={()=>{setString(s=string)}}>the string typed is:{string}</h3>
         </div>
     )
 }
