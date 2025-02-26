@@ -1,21 +1,50 @@
-import '../css/Signup.css'
-import React from "react"
-import {Link,useNavigate} from "react-router-dom"
+import "../css/Signup.css";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 function Signup() {
-    const navigate = useNavigate();
-    const handleSubmit = () => {
-    navigate("/Login");
+  const navigate=useNavigate()
+  const [firstName, setFN] = useState("");
+  const [lastName, setLN] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+  const [phoneNumber, setPN] = useState(0);
+  const handleSignup = async(event) => {
+    event.preventDefault()
+    const req =await axios.post("http://localhost:3001/signup", {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      phoneNumber,
+    });
+    const message=req.data.message
+    const isSignup=req.data.isSignup
+    if(isSignup){
+      alert(message)
+      navigate("/Login")
+    }
+    else{
+      alert(message)
+    }
   };
   return (
     <div>
-      <form onSubmit={handleSubmit} className="form-container">
+      <form onSubmit={handleSignup} className="form-container">
         <table>
           <tr>
             <td>
               <label htmlFor="First name">First name:</label>
             </td>
             <td>
-              <input type="text" placeholder="Enter first name" required />
+              <input
+                id="firstName"
+                value={firstName}
+                onChange={(e) => setFN(e.target.value)}
+                type="text"
+                placeholder="Enter first name"
+                required
+              />
             </td>
           </tr>
           <tr>
@@ -23,7 +52,14 @@ function Signup() {
               <label htmlFor="Last name">Last name:</label>
             </td>
             <td>
-              <input type="text" placeholder="Enter Last name" required />
+              <input
+                id="lastName"
+                value={lastName}
+                onChange={(e) => setLN(e.target.value)}
+                type="text"
+                placeholder="Enter Last name"
+                required
+              />
             </td>
           </tr>
           <tr>
@@ -32,19 +68,24 @@ function Signup() {
             </td>
             <td>
               <input
-                type="email"
+                id="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="text"
                 placeholder="Enter your email"
-                defaultValue="@sjit.ac.in"
                 required
               />
             </td>
           </tr>
           <tr>
             <td>
-              <label htmlFor="cnfPassword">Confirm Password:</label>
+              <label htmlFor="Password">Confirm Password:</label>
             </td>
             <td>
               <input
+                id="Password"
+                value={password}
+                onChange={(e) => setPass(e.target.value)}
                 type="password"
                 placeholder="Enter your Password"
                 required
@@ -53,42 +94,31 @@ function Signup() {
           </tr>
           <tr>
             <td>
-              <label htmlFor="dob">Date of Birth:</label>
-            </td>
-            <td>
-              <input type="date" placeholder="Enter your Date" required />
-            </td>
-          </tr>
-          <tr>
-            <td>
               <label htmlFor="Phone number">Mobile number:</label>
             </td>
             <td>
-              <input type="tel" placeholder="Enter your Password" required />
+              <input
+                id="PhoneNumber"
+                value={phoneNumber}
+                onChange={(e) => setPN(parseInt(e.target.value))}
+                type="number"
+                placeholder="Enter your Password"
+                required
+              />
             </td>
           </tr>
-          <tr>
-            <td>
-              <label htmlFor="Gender">Gender:</label>
-            </td>
-            <td>
-              <label htmlFor="male">Male</label>
-              <input type="radio" name="gender" value="male" />
-              <label htmlFor="female">Female</label>
-              <input type="radio" name="gender" value="female" />
-              <label htmlFor="other">Other</label>
-              <input type="radio" name="gender" value="other" />
-            </td>
-          </tr>
-          
           <tr>
             <td></td>
-            <td style={{textAlign:"left"}}>
-              <button type="Submit" className="sbutton">Sign Up</button>
+            <td style={{ textAlign: "left" }}>
+              <button type="Submit" className="sbutton">
+                Sign Up
+              </button>
             </td>
           </tr>
         </table>
-        <p style={{textAlign:"center"}}>Already have an account?<Link to="/Login">Login</Link></p>
+        <p style={{ textAlign: "center" }}>
+          Already have an account?<Link to="/Login">Login</Link>
+        </p>
       </form>
     </div>
   );
