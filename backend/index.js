@@ -5,7 +5,9 @@ const bcrypt = require("bcrypt");
 const cors=require('cors')
 const Signup = require("./models/signupSchema");
 const app = express();
-app.use(cors())
+app.use(cors({
+  origin:"https://mern-prac-one.vercel.app/"
+}))
 app.use(express.json());
 const PORT = 3001;
 dotenv.config();
@@ -52,15 +54,12 @@ app.get('/getsignupdet',async(req,res)=>{
   res.send("signup details fetched")
 });
 
-
 app.post("/login", async(req, res) => {
   try {
     const{email,password}=req.body
     const exitingUser=await Signup.findOne({email:email})
-    console.log(exitingUser)
     if(exitingUser!=null){
       const isValidPassword=await bcrypt.compare(password,exitingUser.password)
-      console.log(isValidPassword)
       if(isValidPassword){
         res.status(201).json({message:"login successfull",isLoggedin:true})
       }
@@ -77,5 +76,6 @@ app.post("/login", async(req, res) => {
     res.status(400).json({message:"login error check your code",isLoggedin:false})
   }
 });
+
 
 app.listen(PORT, () => console.log("server started successfully"));
